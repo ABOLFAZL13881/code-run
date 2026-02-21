@@ -14,23 +14,22 @@
   <style>
     /* =================== CORE VARIABLES =================== */
     :root {
-      --bg-dark: #030305;
-      --bg-card: rgba(255, 255, 255, 0.03);
-      --bg-card-hover: rgba(255, 255, 255, 0.07);
-      --primary: #6366f1;
-      --secondary: #a855f7;
-      --accent: #ec4899;
-      --text-main: #ffffff;
-      --text-muted: #94a3b8;
-      --border: rgba(255, 255, 255, 0.1);
-      --glow: 0 0 80px -20px rgba(99, 102, 241, 0.5);
-      
-      --font-main: 'Space Grotesk', sans-serif;
-      --font-fa: 'Vazirmatn', sans-serif;
-      
-      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
+  --bg-dark: #000000;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  
+  --primary: #8d00df;        /* آبی سرمه‌ای اصلی */
+  --secondary: #8d00df;      /* زرد کهربایی */
+  --accent: #8d00df;         /* زرد طلایی */
+  
+  --text-main: #ffffff;
+  --text-muted: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --glow: 0 0 80px -20px rgba(30, 64, 175, 0.5); /* سایه آبی سرمه‌ای */
+  --font-main: 'Space Grotesk', sans-serif;
+  --font-fa: 'Vazirmatn', sans-serif;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
     [dir="rtl"] { --font-main: 'Vazirmatn', sans-serif; }
 
     /* =================== RESET & BASE =================== */
@@ -643,11 +642,16 @@
       font-size: 0.82rem; transition: color 0.3s;
     }
     .footer-social a:hover { color: white; }
-
+    .noise-overlay {
+        opacity: 0.1 !important; /* افزایش از 0.04 به 0.08 */
+    }
     /* =================== RESPONSIVE DESIGN =================== */
     
     /* Tablet */
     @media (max-width: 1024px) {
+      .noise-overlay {
+        opacity: 0.188888 !important; /* افزایش از 0.04 به 0.08 */
+    }
       .bento-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -674,6 +678,10 @@
     /* Mobile */
     @media (max-width: 768px) {
       /* Nav */
+      /* افزایش شدت نویز پس‌زمینه در موبایل */
+    .noise-overlay {
+        opacity: 0.188888 !important; /* افزایش از 0.04 به 0.08 */
+    }
       .nav-links {
         position: fixed; top: 0; right: -100%;
         width: 82%; max-width: 300px; height: 100vh;
